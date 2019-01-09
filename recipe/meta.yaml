@@ -23,9 +23,10 @@ requirements:
     - python
     - pip
     - numpy
-    - openblas
+    - blas 1.1 openblas  # [unix]
   run:
     - python
+    - blas 1.1 openblas  # [unix]
     - {{ pin_compatible('numpy') }}
     - ase
 
