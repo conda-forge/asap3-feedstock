@@ -23,10 +23,10 @@ requirements:
     - python
     - pip
     - numpy
-    - blas * {{ blas_impl }}
+    - blas * {{ openblas }}
   run:
     - python
-    - blas * {{ blas_impl }}
+    - blas * {{ openblas }}
     - {{ pin_compatible('numpy') }}
     - ase
 
