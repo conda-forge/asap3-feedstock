@@ -23,11 +23,12 @@ requirements:
     - pip
     - numpy
     - openblas
-    - openmpi
+    - {{ mpi }}
   run:
     - python
     - {{ pin_compatible('numpy') }}
     - ase
+    - {{ mpi }}
 
 test:
   requires:
