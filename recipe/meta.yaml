@@ -18,13 +18,12 @@ requirements:
   build:
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
-    - openmpi
-    - python
   host:
     - python
     - pip
     - numpy
     - openblas
+    - openmpi
   run:
     - python
     - {{ pin_compatible('numpy') }}
