@@ -26,7 +26,6 @@ requirements:
     - pip
     - numpy
     - openblas
-    - openmp
     - openmpi
   run:
     - python
@@ -34,12 +33,10 @@ requirements:
     - {{ pin_compatible('numpy') }}
     - ase
     - openmpi
-    - openmp
 
 test:
   requires:
     - openmpi
-    - openmp
   files:
     - Verlet*.pickle
     - hostfile
