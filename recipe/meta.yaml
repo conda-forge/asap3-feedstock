@@ -13,7 +13,7 @@ source:
     - ase_18_1_comapat.patch
 
 build:
-  number: 2
+  number: 3
   script: "{{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv"
   skip: True  # [not linux]
 
@@ -26,16 +26,20 @@ requirements:
     - pip
     - numpy
     - openblas
+    - openmp
     - openmpi
   run:
     - python
     - openblas
     - {{ pin_compatible('numpy') }}
     - ase
+    - openmpi
+    - openmp
 
 test:
   requires:
     - openmpi
+    - openmp
   files:
     - Verlet*.pickle
     - hostfile
@@ -47,6 +51,7 @@ test:
     - cp Verlet*.pickle hostfile Test
     - cd Test
     - python TestAll.py
+    - python TestAll.py -t
     - mpirun -np 2 --hostfile hostfile asap-python TestAll.py --parallel
 
 about:
