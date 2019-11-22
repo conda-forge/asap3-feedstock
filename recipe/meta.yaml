@@ -10,6 +10,7 @@ source:
   sha256: da1b9bb8cde76cf9010921dfd765acf8e7488ae60e5e57c62ec390a178c89261
   patches:
     - bldlibrary.patch
+    - ase_18_1_comapat.patch
 
 build:
   number: 0
