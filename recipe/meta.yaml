@@ -13,7 +13,7 @@ source:
     - ase_18_1_comapat.patch
 
 build:
-  number: 1
+  number: 2
   script: "{{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv"
   skip: True  # [not linux]
 
@@ -29,6 +29,7 @@ requirements:
     - openmpi
   run:
     - python
+    - openblas
     - {{ pin_compatible('numpy') }}
     - ase
 
@@ -46,7 +47,6 @@ test:
     - cp Verlet*.pickle hostfile Test
     - cd Test
     - python TestAll.py
-    - /usr/bin/sudo -n /usr/bin/yum -y -q install rsh  # [linux]
     - mpirun -np 2 --hostfile hostfile asap-python TestAll.py --parallel
 
 about:
