@@ -34,7 +34,6 @@ requirements:
 test:
   requires:
     - openmpi
-    - ase <3.18
   files:
     - Verlet*.pickle
     - hostfile
