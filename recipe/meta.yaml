@@ -1,5 +1,5 @@
 {% set name = "asap3" %}
-{% set version = "3.11.6" %}
+{% set version = "3.11.10" %}
 
 package:
   name: {{ name|lower }}
@@ -7,18 +7,20 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 242c782bf4267bf67001670f19e16d65f41cb5bf8161c4c7334863b516c52ad0
+  sha256: da1b9bb8cde76cf9010921dfd765acf8e7488ae60e5e57c62ec390a178c89261
+  patches:
+    - bldlibrary.patch
+    - ase_18_1_comapat.patch
 
 build:
   number: 1
   script: "{{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv"
-  skip: True  # [win]
+  skip: True  # [not linux]
 
 requirements:
   build:
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
-    - openmpi
   host:
     - python
     - pip
@@ -27,6 +29,7 @@ requirements:
     - openmpi
   run:
     - python
+    - openblas
     - {{ pin_compatible('numpy') }}
     - ase
     - openblas
@@ -45,7 +48,6 @@ test:
     - cp Verlet*.pickle hostfile Test
     - cd Test
     - python TestAll.py
-    - /usr/bin/sudo -n /usr/bin/yum -y -q install rsh  # [linux]
     - mpirun -np 2 --hostfile hostfile asap-python TestAll.py --parallel
 
 about:
