@@ -33,7 +33,7 @@ requirements:
     - {{ mpi }}  # [mpi != 'nompi']    
 
 test:
-  requirements:
+  requires:
     - {{ mpi }}  # [mpi != 'nompi']
   files:
     - Verlet*.pickle
