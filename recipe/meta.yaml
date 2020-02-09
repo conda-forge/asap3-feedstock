@@ -19,24 +19,20 @@ build:
 
 requirements:
   build:
-    - {{ compiler('c') }}
     - {{ compiler('cxx') }}
   host:
     - python
     - pip
     - numpy
-    - openblas
-    - openmpi
+    - libblas
+    - {{ mpi }}  # [mpi != 'nompi']
   run:
     - python
-    - openblas
-    - {{ pin_compatible('numpy') }}
     - ase
-    - openblas
+    - {{ pin_compatible('numpy') }}
+    - {{ mpi }}  # [mpi != 'nompi']    
 
 test:
-  requires:
-    - openmpi
   files:
     - Verlet*.pickle
     - hostfile
