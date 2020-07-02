@@ -1,5 +1,5 @@
 {% set name = "asap3" %}
-{% set version = "3.11.10" %}
+{% set version = "3.11.13" %}
 
 package:
   name: {{ name|lower }}
@@ -20,18 +20,22 @@ build:
 
 requirements:
   build:
+    - {{ compiler('c') }}
     - {{ compiler('cxx') }}
   host:
     - python
     - pip
     - numpy
-    - libblas
+    - openblas
     - {{ mpi }}  # [mpi != 'nompi']
+    - kim-api
   run:
     - python
+    - openblas
     - ase
     - {{ pin_compatible('numpy') }}
     - {{ mpi }}  # [mpi != 'nompi']    
+    - kim-api
 
 test:
   requires:
