@@ -11,10 +11,9 @@ source:
   git_url: https://gitlab.com/asap/asap.git
   patches:
     - bldlibrary.patch
-    #- ase_18_1_comapat.patch
 
 build:
-  number: 2
+  number: 3
   script: "{{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv"
   skip: True  # [not linux or py2k]
 
