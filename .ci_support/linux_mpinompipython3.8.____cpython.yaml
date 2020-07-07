@@ -12,12 +12,12 @@ cxx_compiler_version:
 - '7'
 docker_image:
 - condaforge/linux-anvil-comp7
+mpi:
+- nompi
 numpy:
 - '1.14'
 openblas:
 - 0.3.6
-openmpi:
-- '4.0'
 pin_run_as_build:
   openblas:
     max_pin: x.x.x
@@ -25,4 +25,4 @@ pin_run_as_build:
     min_pin: x.x
     max_pin: x.x
 python:
-- '3.6'
+- 3.8.* *_cpython

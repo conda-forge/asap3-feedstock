@@ -1,21 +1,21 @@
 {% set name = "asap3" %}
-{% set version = "3.11.10" %}
+{% set version = "3.11.13" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: da1b9bb8cde76cf9010921dfd765acf8e7488ae60e5e57c62ec390a178c89261
+  #url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  #sha256: da1b9bb8cde76cf9010921dfd765acf8e7488ae60e5e57c62ec390a178c89261
+  git_url: https://gitlab.com/asap/asap.git
   patches:
     - bldlibrary.patch
-    - ase_18_1_comapat.patch
 
 build:
-  number: 2
+  number: 3
   script: "{{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv"
-  skip: True  # [not linux]
+  skip: True  # [not linux or py2k]
 
 requirements:
   build:
@@ -26,16 +26,19 @@ requirements:
     - pip
     - numpy
     - openblas
-    - openmpi
+    - {{ mpi }}  # [mpi != 'nompi']
+    - kim-api
   run:
     - python
     - openblas
-    - {{ pin_compatible('numpy') }}
     - ase
+    - {{ pin_compatible('numpy') }}
+    - {{ mpi }}  # [mpi != 'nompi']    
+    - kim-api
 
 test:
   requires:
-    - openmpi
+    - {{ mpi }}  # [mpi != 'nompi']
   files:
     - Verlet*.pickle
     - hostfile
@@ -47,11 +50,11 @@ test:
     - cp Verlet*.pickle hostfile Test
     - cd Test
     - python TestAll.py
-    - mpirun -np 2 --hostfile hostfile asap-python TestAll.py --parallel
+    - mpirun -np 2 --hostfile hostfile asap-python TestAll.py --parallel  # [mpi != 'nompi']
 
 about:
   home: https://wiki.fysik.dtu.dk/asap
-  license: LGPL-3.0
+  license: LGPL-3.0-only
   license_family: LGPL
   license_file: LICENSE.txt
   summary: 'ASAP is a calculator for doing large-scale classical molecular dynamics within ASE.'
