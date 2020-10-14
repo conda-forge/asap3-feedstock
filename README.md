@@ -5,9 +5,13 @@ Home: https://wiki.fysik.dtu.dk/asap
 
 Package license: LGPL-3.0-only
 
-Feedstock license: BSD-3-Clause
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/asap3-feedstock/blob/master/LICENSE.txt)
 
 Summary: ASAP is a calculator for doing large-scale classical molecular dynamics within ASE.
+
+Development: https://gitlab.com/asap/asap
+
+Documentation: https://wiki.fysik.dtu.dk/asap/Manual
 
 ASAP is a tool for doing atomic-scale computer simulations
 (mainly molecular dynamics) using classical potentials
@@ -36,69 +40,65 @@ Current build status
         <table>
           <thead><tr><th>Variant</th><th>Status</th></tr></thead>
           <tbody><tr>
-              <td>linux_mpinompipython3.6.____cpython</td>
+              <td>linux_64_mpinompinumpy1.16python3.6.____cpython</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=2713&branchName=master">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/asap3-feedstock?branchName=master&jobName=linux&configuration=linux_mpinompipython3.6.____cpython" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/asap3-feedstock?branchName=master&jobName=linux&configuration=linux_64_mpinompinumpy1.16python3.6.____cpython" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>linux_mpinompipython3.7.____cpython</td>
+              <td>linux_64_mpinompinumpy1.16python3.7.____cpython</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=2713&branchName=master">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/asap3-feedstock?branchName=master&jobName=linux&configuration=linux_mpinompipython3.7.____cpython" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/asap3-feedstock?branchName=master&jobName=linux&configuration=linux_64_mpinompinumpy1.16python3.7.____cpython" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>linux_mpinompipython3.8.____cpython</td>
+              <td>linux_64_mpinompinumpy1.16python3.8.____cpython</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=2713&branchName=master">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/asap3-feedstock?branchName=master&jobName=linux&configuration=linux_mpinompipython3.8.____cpython" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/asap3-feedstock?branchName=master&jobName=linux&configuration=linux_64_mpinompinumpy1.16python3.8.____cpython" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>linux_mpiopenmpipython3.6.____cpython</td>
+              <td>linux_64_mpinompinumpy1.19python3.9.____cpython</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=2713&branchName=master">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/asap3-feedstock?branchName=master&jobName=linux&configuration=linux_mpiopenmpipython3.6.____cpython" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/asap3-feedstock?branchName=master&jobName=linux&configuration=linux_64_mpinompinumpy1.19python3.9.____cpython" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>linux_mpiopenmpipython3.7.____cpython</td>
+              <td>linux_64_mpiopenmpinumpy1.16python3.6.____cpython</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=2713&branchName=master">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/asap3-feedstock?branchName=master&jobName=linux&configuration=linux_mpiopenmpipython3.7.____cpython" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/asap3-feedstock?branchName=master&jobName=linux&configuration=linux_64_mpiopenmpinumpy1.16python3.6.____cpython" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>linux_mpiopenmpipython3.8.____cpython</td>
+              <td>linux_64_mpiopenmpinumpy1.16python3.7.____cpython</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=2713&branchName=master">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/asap3-feedstock?branchName=master&jobName=linux&configuration=linux_mpiopenmpipython3.8.____cpython" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/asap3-feedstock?branchName=master&jobName=linux&configuration=linux_64_mpiopenmpinumpy1.16python3.7.____cpython" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>linux_64_mpiopenmpinumpy1.16python3.8.____cpython</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=2713&branchName=master">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/asap3-feedstock?branchName=master&jobName=linux&configuration=linux_64_mpiopenmpinumpy1.16python3.8.____cpython" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>linux_64_mpiopenmpinumpy1.19python3.9.____cpython</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=2713&branchName=master">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/asap3-feedstock?branchName=master&jobName=linux&configuration=linux_64_mpiopenmpinumpy1.19python3.9.____cpython" alt="variant">
                 </a>
               </td>
             </tr>
           </tbody>
         </table>
       </details>
-    </td>
-  </tr>
-  <tr>
-    <td>OSX</td>
-    <td>
-      <img src="https://img.shields.io/badge/OSX-disabled-lightgrey.svg" alt="OSX disabled">
-    </td>
-  </tr>
-  <tr>
-    <td>Windows</td>
-    <td>
-      <img src="https://img.shields.io/badge/Windows-disabled-lightgrey.svg" alt="Windows disabled">
-    </td>
-  </tr>
-  <tr>
-    <td>Linux_ppc64le</td>
-    <td>
-      <img src="https://img.shields.io/badge/ppc64le-disabled-lightgrey.svg" alt="ppc64le disabled">
     </td>
   </tr>
 </table>
