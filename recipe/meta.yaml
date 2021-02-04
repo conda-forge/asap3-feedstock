@@ -25,6 +25,10 @@ requirements:
     - python
     - pip
     - numpy
+    - libblas * *openblas
+    - libcblas
+    - liblapack
+    - liblapacke
     - openblas
     - {{ mpi }}  # [mpi != 'nompi']
     - kim-api
