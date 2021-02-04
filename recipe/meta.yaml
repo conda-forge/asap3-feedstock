@@ -25,21 +25,23 @@ requirements:
     - python
     - pip
     - numpy
-    - libblas * *openblas
     - openblas
-    - {{ mpi }}  # [mpi != 'nompi']
+    - openmpi
+#    - {{ mpi }}  # [mpi != 'nompi']
     - kim-api
   run:
     - python
     - openblas
     - ase
     - {{ pin_compatible('numpy') }}
-    - {{ mpi }}  # [mpi != 'nompi']    
+    - openmpi
+#    - {{ mpi }}  # [mpi != 'nompi']    
     - kim-api
 
 test:
   requires:
-    - {{ mpi }}  # [mpi != 'nompi']
+    #- {{ mpi }}  # [mpi != 'nompi']
+    - openmpi
   files:
     - Verlet*.pickle
     - hostfile
