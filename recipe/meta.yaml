@@ -1,16 +1,16 @@
 {% set name = "asap3" %}
-{% set version = "3.11.13" %}
+{% set version = "3.12.2" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  #url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  #sha256: da1b9bb8cde76cf9010921dfd765acf8e7488ae60e5e57c62ec390a178c89261
-  git_url: https://gitlab.com/asap/asap.git
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  sha256: b6c03c790ba4c9f0d231659078c26ce8193fa21314bf2fe4adaa7899d5cd9dbe
+  #git_url: https://gitlab.com/asap/asap.git
   patches:
-    - bldlibrary.patch
+          #- bldlibrary.patch
 
 build:
   number: 4
