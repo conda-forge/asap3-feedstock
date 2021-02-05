@@ -8,13 +8,12 @@ package:
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: b6c03c790ba4c9f0d231659078c26ce8193fa21314bf2fe4adaa7899d5cd9dbe
-  #git_url: https://gitlab.com/asap/asap.git
-  patches:
-          #- bldlibrary.patch
 
 build:
   number: 0
-  #script: "{{ PYTHON }} -m pip install . -vv"
+  script: 
+    - "echo 'libraries += [\"mpi\"]' >> customize.py"  # [mpi != 'nompi'] 
+    - {{ PYTHON }} -m pip install . -vv"
   skip: True  # [not linux or py2k]
 
 requirements:
@@ -26,22 +25,19 @@ requirements:
     - pip
     - numpy
     - openblas
-    - openmpi
-#    - {{ mpi }}  # [mpi != 'nompi']
+    - {{ mpi }}  # [mpi != 'nompi']
     - kim-api
   run:
     - python
     - openblas
     - ase
     - {{ pin_compatible('numpy') }}
-    - openmpi
-#    - {{ mpi }}  # [mpi != 'nompi']    
+    - {{ mpi }}  # [mpi != 'nompi']    
     - kim-api
 
 test:
   requires:
-    #- {{ mpi }}  # [mpi != 'nompi']
-    - openmpi
+    - {{ mpi }}  # [mpi != 'nompi']
   files:
     - Verlet*.pickle
     - hostfile
