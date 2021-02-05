@@ -53,7 +53,7 @@ test:
     - cp Verlet*.pickle hostfile Test
     - cd Test
     - python TestAll.py
-    - mpirun -np 2 --hostfile hostfile asap-python TestAll.py --parallel  # [mpi != 'nompi']
+    - mpirun -np 2 --hostfile hostfile python -W error::FutureWarning TestAll.py --parallel  # [mpi != 'nompi']
 
 about:
   home: https://wiki.fysik.dtu.dk/asap
