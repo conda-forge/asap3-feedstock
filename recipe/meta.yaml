@@ -14,7 +14,7 @@ build:
   script: 
     - echo "libraries += ['mpi']" >> customize.py  # [mpi != 'nompi'] 
     - {{ PYTHON }} -m pip install . -vv
-  skip: True  # [not linux or py2k]
+  skip: True  # [win or py2k]
 
 requirements:
   build:
