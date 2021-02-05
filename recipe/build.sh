@@ -1,15 +1,14 @@
 #!/bin/bash
 
-cat > customize-local.py <<EOF
+cat >> customize.py <<EOF
 mpi_libraries += ["mpi"]
 remove_compile_args += ['-march=native']
+libraries += ["mpi"]
 EOF
 
 echo "============= CUSTOMIZE ==============="
 cat customize.py
-
-echo "============= CUSTOMIZE-LOCAL ==============="
-cat customize-local.py
+echo "============= CUSTOMIZE ==============="
 
 
 $PYTHON -m pip install . -vv
