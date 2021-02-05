@@ -1,7 +1,7 @@
 #!/bin/bash
 
 cat > customize-local.py <<EOF
-mpi_libraries += ["-lmpi"]
+mpi_libraries += ["mpi"]
 remove_compile_args += ['-march=native']
 EOF
 
