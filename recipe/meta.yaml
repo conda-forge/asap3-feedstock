@@ -48,7 +48,7 @@ test:
   commands:
     - cp Verlet*.pickle hostfile Test
     - cd Test
-    - sed -i 's/\(gc.set_debug\)/#\1/g' TestAll.py  # [python_impl == 'pypy']
+    - sed -i 's/gc.set_debug/#gc.set_debug/g' TestAll.py
     - python TestAll.py
     - mpirun -np 2 --hostfile hostfile python -W error::FutureWarning TestAll.py --parallel  # [mpi != 'nompi']
 
