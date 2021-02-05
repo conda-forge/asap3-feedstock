@@ -1,21 +1,20 @@
 {% set name = "asap3" %}
-{% set version = "3.11.13" %}
+{% set version = "3.12.2" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  #url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  #sha256: da1b9bb8cde76cf9010921dfd765acf8e7488ae60e5e57c62ec390a178c89261
-  git_url: https://gitlab.com/asap/asap.git
-  patches:
-    - bldlibrary.patch
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  sha256: b6c03c790ba4c9f0d231659078c26ce8193fa21314bf2fe4adaa7899d5cd9dbe
 
 build:
-  number: 4
-  script: "{{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv"
-  skip: True  # [not linux or py2k]
+  number: 0
+  script: 
+    - echo "libraries += ['mpi']" >> customize.py  # [mpi != 'nompi'] 
+    - {{ PYTHON }} -m pip install . -vv
+  skip: True  # [win or py2k]
 
 requirements:
   build:
@@ -50,7 +49,7 @@ test:
     - cp Verlet*.pickle hostfile Test
     - cd Test
     - python TestAll.py
-    - mpirun -np 2 --hostfile hostfile asap-python TestAll.py --parallel  # [mpi != 'nompi']
+    - mpirun -np 2 --hostfile hostfile python -W error::FutureWarning TestAll.py --parallel  # [mpi != 'nompi']
 
 about:
   home: https://wiki.fysik.dtu.dk/asap
