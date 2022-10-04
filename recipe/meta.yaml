@@ -1,5 +1,5 @@
 {% set name = "asap3" %}
-{% set version = "3.12.8" %}
+{% set version = "3.12.11" %}
 
 package:
   name: {{ name|lower }}
@@ -7,10 +7,10 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: bc0e94fb3f6ab62b5cc9f0822ae59022e83f450af6f452d159a0e34a22372d11
+  sha256: cb441cd26cd3b30fa8ea74a31b95bdc4be167259e4d78c9941bc32909bce97e6
 
 build:
-  number: 1
+  number: 0
   script:
     - echo "libraries += ['mpi']" >> customize.py  # [mpi != 'nompi'] 
     - {{ PYTHON }} -m pip install . -vv
