@@ -10,7 +10,7 @@ source:
   sha256: 6ba11e7e9623a7538419f4f7c9704ab87232381da7b8e07702fbf383fd6cf92f
 
 build:
-  number: 0
+  number: 1
   script:
     - echo "libraries += ['mpi']" >> customize.py  # [mpi != 'nompi'] 
     - {{ PYTHON }} -m pip install . -vv
