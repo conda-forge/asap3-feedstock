@@ -49,7 +49,7 @@ test:
   commands:
     - cp Verlet*.pickle hostfile Test
     - cd Test
-    - sed -i 's/np.float)/float)/g' *.py
+    - sed -i 's/(np.float)/(float)/g' *.py parallel/*.py
     - python TestAll.py
     - mpirun -np 2 --hostfile hostfile python -W error::FutureWarning TestAll.py --parallel  # [mpi != 'nompi']
 
