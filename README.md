@@ -1,11 +1,11 @@
-About asap3
-===========
+About asap3-feedstock
+=====================
+
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/asap3-feedstock/blob/main/LICENSE.txt)
 
 Home: https://wiki.fysik.dtu.dk/asap
 
 Package license: LGPL-3.0-only
-
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/asap3-feedstock/blob/main/LICENSE.txt)
 
 Summary: ASAP is a calculator for doing large-scale classical molecular dynamics within ASE.
 
