@@ -1,5 +1,5 @@
 {% set name = "asap3" %}
-{% set version = "3.13.2" %}
+{% set version = "3.13.3" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: c2e6f0570de8037be45afd9bf35f6b4e76e1f518a0af0207c6bf5809ddb1abb8
+  sha256: 78aa4c9ee11315b6e7f8cd9b1fda6ab9a240cc4f4ff418972ea079612e26d369
 
 build:
   number: 0
