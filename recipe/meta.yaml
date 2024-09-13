@@ -10,7 +10,7 @@ source:
   sha256: 6b63762806ce004fad65f413f5b417cc6b6e7aa6ced0b5f2069afaeac9aa77ed
 
 build:
-  number: 0
+  number: 1
   script:
     - echo "libraries += ['mpi']" >> customize.py  # [mpi != 'nompi'] 
     - echo "remove_compile_args += ['-march=native']" >> customize.py
@@ -20,6 +20,7 @@ build:
 requirements:
   build:
     - {{ compiler('c') }}
+    - {{ stdlib("c") }}
     - {{ compiler('cxx') }}
   host:
     - python
