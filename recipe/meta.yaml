@@ -29,6 +29,7 @@ requirements:
     - openblas
     - {{ mpi }}  # [mpi != 'nompi']
     - kim-api
+    - setuptools
   run:
     - python
     - openblas
