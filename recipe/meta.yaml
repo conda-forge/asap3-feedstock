@@ -10,7 +10,7 @@ source:
   sha256: 13adabc46f1956dfcf6605536a7e2901215b5a5c3cc424b97f64eb038551ffda
 
 build:
-  number: 1
+  number: 2
   script:
     - echo "libraries += ['mpi']" >> customize.py  # [mpi != 'nompi'] 
     - echo "remove_compile_args += ['-march=native']" >> customize.py
@@ -34,7 +34,6 @@ requirements:
     - python
     - openblas
     - ase
-    - {{ pin_compatible('numpy') }}
     - {{ mpi }}  # [mpi != 'nompi']    
     - kim-api
 
