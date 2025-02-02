@@ -23,7 +23,7 @@ requirements:
     - {{ stdlib("c") }}
     - {{ compiler('cxx') }}
   host:
-    - python
+    - python >3.9
     - pip
     - numpy
     - openblas
@@ -31,7 +31,7 @@ requirements:
     - kim-api
     - setuptools
   run:
-    - python
+    - python >3.9
     - openblas
     - ase >=3.24
     - {{ mpi }}  # [mpi != 'nompi']    
