@@ -33,7 +33,7 @@ requirements:
   run:
     - python
     - openblas
-    - ase
+    - ase >=3.24
     - {{ mpi }}  # [mpi != 'nompi']    
     - kim-api
 
