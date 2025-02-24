@@ -1,21 +1,21 @@
 {% set name = "asap3" %}
-{% set version = "3.13.5" %}
+{% set version = "3.13.6" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 13adabc46f1956dfcf6605536a7e2901215b5a5c3cc424b97f64eb038551ffda
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  sha256: 28576d42311e721c2af13cd677ffb40ce05c07b49c9d8d925fae62d19db7fdee
 
 build:
-  number: 3
+  number: 0
   script:
     - echo "libraries += ['mpi']" >> customize.py  # [mpi != 'nompi'] 
     - echo "remove_compile_args += ['-march=native']" >> customize.py
     - {{ PYTHON }} -m pip install . -vv
-  skip: true  # [win or py2k or (py < 38)]
+  skip: true  # [win or py2k or (py < 310)]
 
 requirements:
   build:
@@ -33,7 +33,7 @@ requirements:
   run:
     - python
     - openblas
-    - ase
+    - ase >=3.24
     - {{ mpi }}  # [mpi != 'nompi']    
     - kim-api
 
