@@ -10,7 +10,7 @@ source:
   sha256: 28576d42311e721c2af13cd677ffb40ce05c07b49c9d8d925fae62d19db7fdee
 
 build:
-  number: 0
+  number: 1
   script:
     - echo "libraries += ['mpi']" >> customize.py  # [mpi != 'nompi'] 
     - echo "remove_compile_args += ['-march=native']" >> customize.py
