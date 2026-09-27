@@ -6,11 +6,11 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  url: https://files.pythonhosted.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: e46147491d3a7219e9cc716fa7692d625a25f917169cc746832299cdad4dfee2
 
 build:
-  number: 0
+  number: 1
   script:
     - echo "libraries += ['mpi']" >> customize.py  # [mpi != 'nompi'] 
     - echo "remove_compile_args += ['-march=native']" >> customize.py
